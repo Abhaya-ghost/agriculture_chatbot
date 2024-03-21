@@ -11,9 +11,6 @@ import bot from './assets/bot1.gif'
 
 function App() {
   const [open, setOpen] = useState(false)
-  // const [prompt, setPrompt] = useState('')
-  // const [response, setReponse] = useState('')
-  // const [loading, setLoading] = useState(false)
 
   const handleOpen = () => {
     setOpen(true)
@@ -23,14 +20,6 @@ function App() {
     setOpen(false)
   }
 
-  // const handleSubmit = async(e) => {
-  //   e.preventDefault()
-  //   setReponse('')
-  //   setLoading(true)
-  //   const res = await axios.post('http://localhost:4000/chat', {prompt})
-  //   setReponse(res)
-  //   setLoading(false)
-  // }
   const [typing, setTyping] = useState(false)
   const [messages, setMessages] = useState([
     {
@@ -59,7 +48,7 @@ function App() {
 
     setTyping(true)
 
-    const res = await axios.post('http://localhost:4000/chat', { prompt })
+    const res = await axios.post('https://agriculture-chatbot-q28j.onrender.com/chat', { prompt })
     console.log(res.data)
 
     setMessages([...newMessages, {
